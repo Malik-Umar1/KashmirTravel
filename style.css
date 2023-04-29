@@ -1,0 +1,363 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    /* background-color: rgba(206, 185, 95, 0.774) */
+}
+
+.nav {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    height: 90px;
+    background-color: white;
+    box-shadow: 3px 3px 10px lightslategray;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    /*fixed to the top edge*/
+    z-index: 1;
+    /*overlay other elements*/
+}
+
+.logo {
+    flex: 1;
+    font-size: 40px;
+    padding: 15px;
+    margin-left: 50px;
+}
+
+ul.menu {
+    flex: 1;
+    /*pushing it to the other side of logo*/
+    display: flex;
+    flex-flow: row;
+}
+
+.menu li {
+    flex: 1;
+    list-style: none;
+    font-size: 15px;
+    text-align: center;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+}
+
+.menu li a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+.poster {
+    background-image: url("https://www.shraddharane.com/wp-content/uploads/2022/08/Shikara-Ride-at-Dal-Lake-1024x686.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.poster::before{
+    position: absolute;
+    content: "";
+    display: block;
+    background-color: rgba(0, 0, 36, 0.8);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.poster-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.poster-heading {
+    flex: 1;
+}
+
+.poster-heading h1 {
+    font-size: 100px;
+    font-weight: normal;
+    color: yellow;
+}
+
+.poster-text .form {
+    flex: 1;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.275);
+    border-radius: 5px;
+    width: 70%;
+    padding: 1% 2%;
+}
+
+.poster-text input,
+.poster-text .date,
+.poster-text .book {
+    padding: 15px;
+    margin-right: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    outline: 0;
+    border: none;
+}
+
+.poster-text input {
+    width: 50%;
+    flex: 2;
+}
+
+.poster-text .date {
+    width: 20%;
+    flex: 1;
+}
+
+.poster-text .book {
+    width: 20%;
+    flex: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 15px;
+    cursor: pointer;
+    background-color: yellow;
+    font-size: 16px;
+    font-weight: bold;
+    width: 20%;
+}
+.book:hover{
+    background-color: rgb(214, 214, 89);
+}
+
+.places-text {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.places-text h2 {
+    font-size: 55px;
+    color: darkblue;
+    padding-top: 50px;
+    letter-spacing: 1px;
+}
+
+.browse-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /*creating 3 columns of equal width. 1fr unit here represents a fraction of the available space in grid container, and here each column takes 1 third of the available space*/
+    grid-template-rows: repeat(1, 1fr);  /*creating 1 row of height equal to the available space in the grid container*/
+    grid-gap: 30px; /*creating the specified gap between each grid item in both vertical and horizontal directions.*/
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.browse {
+    border: 1px solid lightgray;
+    box-shadow: 2px 2px 6px black;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 80%;
+    height: auto;
+}
+
+.browse img {
+    max-width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.browse-container .text {
+    padding: 20px;
+    line-height: 30px;
+}
+
+.browse-container .btn {
+    display: flex;
+    flex-flow: row;
+    background-color: black;
+    border: none;
+    width: 100%;
+    color: white;
+    padding: 15px;
+    font-size: 15px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: lightgray;
+    color: black;
+}
+
+.more-browse {
+    font-size: 19px;
+    padding-top: 10px;
+}
+
+.zoom-img {
+    float: left;
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+}
+
+.zoom-img .img-prev {
+    position: absolute;
+    overflow: hidden;
+}
+
+.img-prev img {
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+}
+
+.browse:hover .zoom-img img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.about {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 150px;
+}
+
+.about-img {
+    flex: 1;
+}
+
+.about-img img {
+    width: 500px;
+    height: auto;
+    box-shadow: 2px 2px 6px black;
+}
+
+.about-text {
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+}
+
+.about-text small,
+.about-text p,
+.about-text a {
+    flex: 1;
+}
+
+.about-text small {
+    color: #ffc800;
+    font-size: 18px;
+}
+
+.about-text h2 {
+    flex: 1;
+    font-size: 60px;
+    width: 550px;
+}
+
+.about-text p {
+    width: 600px;
+    line-height: 25px;
+    font-weight: bolder;
+    padding: 50px 0;
+}
+
+.about-text a {
+    background-color: white;
+    border: 2px solid black;
+    text-decoration: none;
+    border-radius: 5px;
+    width: 180px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+    color: darkblue;
+    font-weight: bolder;
+    font-size: 14px;
+}
+
+.about-text a:hover {
+    background-color: darkblue;
+    color: white;
+}
+
+.footer {
+    background-image: url("https://www.iastoppers.com/ckfinder/userfiles/files/image-20220723175749-22.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 670px;
+    position: relative;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer::before {
+    position: absolute;
+    content: "";
+    display: block;
+    background-color: rgba(0, 0, 36, 0.8);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.footer .links{
+    position: relative;
+    color: white;
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.links ul{
+    list-style: none;
+    
+}
+
+.links h3{
+    font-weight: normal;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.links li{
+    /* cursor: pointer; */
+    padding: 10px 0;
+}
+
+.links li:hover {
+    color: #ffa801;
+}
+
